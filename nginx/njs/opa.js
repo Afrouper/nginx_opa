@@ -2,8 +2,8 @@ async function checkPolicy(r) {
 
     let opa_data = {
         "input": {
-            "user": "foo_bar",
-            "path": r.variables['request_uri'],
+            "user": "foo_bar",  //TODO: Read user from Token, etc.
+            "uri": r.variables['request_uri'],
             "method": r.method
         }
     };
@@ -25,7 +25,7 @@ async function checkPolicy(r) {
             r.return(403, "No allow from OPA");
             return;
         }
-        r.return(403, "No result from OPA");
+        r.return(502, "No result from OPA");
     } catch (e) {
         r.error(e)
         r.return(500, e);

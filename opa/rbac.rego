@@ -4,6 +4,6 @@ default allow := false
 
 allow {
     input.method == "GET"
-    input.path == "/foo"
+    startswith(input.uri, "/foo")
     input.user == "foo_bar"
 }

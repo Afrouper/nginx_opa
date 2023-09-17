@@ -1,0 +1,26 @@
+### Deny
+GET http://localhost:8080
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 403, "Response status is not 403, was " + response.status);
+});
+%}
+
+### Allow short
+GET http://localhost:8080/foo
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 200, "Response status is not 200, was " + response.status);
+    });
+%}
+
+### Allow long
+GET http://localhost:8080/foo/bar?k=v
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 200, "Response status is not 200, was " + response.status);
+    });
+%}
