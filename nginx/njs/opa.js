@@ -1,6 +1,6 @@
 async function checkPolicy(r) {
 
-    var opa_data = {
+    let opa_data = {
         "input": {
             "user": "foo_bar",
             "path": r.variables['request_uri'],
@@ -8,7 +8,7 @@ async function checkPolicy(r) {
         }
     };
 
-    var opts = {
+    let opts = {
         method: "POST",
         body: JSON.stringify(opa_data)
     };
