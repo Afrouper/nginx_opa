@@ -23,4 +23,4 @@ Also the authorization part is configured here.
 njs Javascript file for accessing OPA. The needed request data is created here.
 
 ## Disclaimer
-This es an example. Take it as example and build your own configuration (e.g. proper error pages).
+This es an example. Take it as example and build your own configuration (proper error pages, OPA configuration, etc.).

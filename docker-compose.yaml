@@ -13,7 +13,7 @@ services:
       - /etc/opa/rbac.rego
 
   nginx:
-    image: nginx:1.25
+    image: nginx:latest
     ports:
       - 8080:8080
     volumes:
